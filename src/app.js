@@ -1,8 +1,9 @@
 import './app.scss';
 import { createElement, appendContent } from './lib/dom';
 import { getApi } from './components/api';
-import Icon from './catPaw.jpg';
-
+import Icon from './components/catPaw.jpg';
+import CatRight from './components/blackCatRight.svg';
+import CatLeft from './components/blackCatLeft.svg';
 export function app() {
   const header = createElement('header', {
     className: 'header'
@@ -32,6 +33,18 @@ export function app() {
   const footer = createElement('footer', {
     className: 'footer'
   });
+
+  const catRight = createElement('img', {
+    className: 'catRight',
+    src: CatRight
+  });
+
+  const catLeft = createElement('img', {
+    className: 'catLeft',
+    src: CatLeft
+  });
+
+  appendContent(footer, [catRight, catLeft]);
 
   const catSection = createElement('section', {
     className: 'catSection'
