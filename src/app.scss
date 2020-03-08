@@ -1,0 +1,22 @@
+.header {
+  flex-basis: 100px;
+  background: linear-gradient(
+    85deg,
+    rgba(252, 69, 86, 1) 0%,
+    rgba(253, 29, 156, 1) 50%,
+    rgba(252, 69, 86, 1) 100%
+  );
+}
+
+.main {
+  flex-basis: 80%;
+}
+
+.footer {
+  flex-basis: 100px;
+  background: linear-gradient(
+    90deg,
+    rgb(251, 63, 63) 0%,
+    rgb(252, 70, 170) 100%
+  );
+}
