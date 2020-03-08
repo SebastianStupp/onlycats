@@ -18,6 +18,9 @@
 
 .footer {
   flex-basis: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-height: 100px;
   background-color: #b9964d;
   border: solid;
