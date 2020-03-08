@@ -1,5 +1,5 @@
 import './app.scss';
-import { createElement } from './lib/dom';
+import { createElement, appendContent } from './lib/dom';
 import { getApi } from './components/api';
 
 export function app() {
@@ -14,6 +14,27 @@ export function app() {
   const footer = createElement('footer', {
     className: 'footer'
   });
-  getApi();
+
+  const catSection = createElement('section', {
+    className: 'catSection'
+  });
+
+  appendContent(main, catSection);
+
+  async function createImage() {
+    const randomCat = await getApi();
+
+    const createCatImage = await createElement('img', {
+      className: 'catImage',
+      src: randomCat
+    });
+    appendContent(catSection, createCatImage);
+  }
+  createImage();
+
   return [header, main, footer];
 }
+
+// (async () => {
+//     const select = await createFckNameOptions();
+//     await appendContent(main, select);
