@@ -1,7 +1,7 @@
 import './app.scss';
 import { createElement, appendContent } from './lib/dom';
 import { getApi } from './components/api';
-import Icon from './catPaw.jpg';
+import Icon from './components/catPaw.jpg';
 
 export function app() {
   const header = createElement('header', {
@@ -50,9 +50,11 @@ export function app() {
   }
   createImage();
 
+  setInterval(async function() {
+    const randomCatChange = await getApi();
+    const test = document.querySelector('.catImage');
+    test.src = randomCatChange;
+  }, 3000);
+
   return [header, main, footer];
 }
-
-// (async () => {
-//     const select = await createFckNameOptions();
-//     await appendContent(main, select);
