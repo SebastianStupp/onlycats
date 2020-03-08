@@ -1,11 +1,29 @@
 import './app.scss';
 import { createElement, appendContent } from './lib/dom';
 import { getApi } from './components/api';
+import Icon from './catPaw.jpg';
 
 export function app() {
   const header = createElement('header', {
     className: 'header'
   });
+
+  const catPawRight = createElement('img', {
+    className: 'catPawLeft',
+    src: Icon
+  });
+
+  const catPawLeft = createElement('img', {
+    className: 'catPawLeft',
+    src: Icon
+  });
+
+  const heading = createElement('h1', {
+    className: 'heading',
+    innerText: 'OnlyCats'
+  });
+
+  appendContent(header, [catPawRight, heading, catPawLeft]);
 
   const main = createElement('main', {
     className: 'main'

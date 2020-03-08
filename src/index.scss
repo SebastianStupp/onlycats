@@ -4,10 +4,13 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  height: 100vw;
+  height: 100%;
+  background-color: #fbdc9a;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-image: linear-gradient(to top, #c3225a, #fd2db1);
 }
