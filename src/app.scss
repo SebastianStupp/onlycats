@@ -1,22 +1,39 @@
 .header {
-  flex-basis: 100px;
-  background: linear-gradient(
-    85deg,
-    rgba(252, 69, 86, 1) 0%,
-    rgba(253, 29, 156, 1) 50%,
-    rgba(252, 69, 86, 1) 100%
-  );
+  flex-basis: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100px;
+  background-color: #b9964d;
+  border: solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .main {
-  flex-basis: 80%;
+  flex-grow: 1;
+  display: flex;
+  justify-items: center;
 }
 
 .footer {
-  flex-basis: 100px;
-  background: linear-gradient(
-    90deg,
-    rgb(251, 63, 63) 0%,
-    rgb(252, 70, 170) 100%
-  );
+  flex-basis: 10%;
+  min-height: 100px;
+  background-color: #b9964d;
+  border: solid;
+  margin-bottom: 20px;
+}
+
+.catSection {
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.catImage {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.heading {
+  font-size: 70px;
 }
