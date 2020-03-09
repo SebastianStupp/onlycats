@@ -1,7 +1,7 @@
 import './app.scss';
 import { createElement, appendContent } from './lib/dom';
 import { getApi } from './components/api';
-import Icon from './components/catPaw.jpg';
+import Icon from './components/catPaw.png';
 
 import CatRight from './components/blackCatRight.svg';
 import CatLeft from './components/blackCatLeft.svg';
@@ -68,7 +68,7 @@ export function app() {
   setInterval(async function() {
     const randomCatChange = await getApi();
     const test = document.querySelector('.catImage');
-    test.src = randomCatChange;
+    test.src = await randomCatChange;
   }, 3000);
 
   return [header, main, footer];

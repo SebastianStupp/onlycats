@@ -1,7 +1,7 @@
 .header {
   flex-basis: 10%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-height: 100px;
   background-color: #b9964d;
@@ -21,10 +21,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 100px;
+  max-height: 100px;
   background-color: #b9964d;
   border: solid;
   margin-bottom: 20px;
+  position: fixed;
+  bottom: 30px;
+  right: 0;
+  left: 0;
 }
 
 .catSection {
