@@ -13,7 +13,8 @@
 .main {
   flex-grow: 1;
   display: flex;
-  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer {
@@ -43,4 +44,10 @@
 
 .heading {
   font-size: 70px;
+}
+
+.loading {
+  // justify-self: center;
+  // align-self: flex-start;
+  font-size: 100px;
 }

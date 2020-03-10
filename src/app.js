@@ -1,5 +1,5 @@
 import './app.scss';
-import { createElement, appendContent } from './lib/dom';
+import { createElement, appendContent, waitFor } from './lib/dom';
 import { getApi } from './components/api';
 import Icon from './components/catPaw.png';
 
@@ -55,21 +55,34 @@ export function app() {
   appendContent(main, catSection);
 
   async function createImage() {
+    //
+    const loading = createElement('div', {
+      innerText: 'Loading...',
+      className: 'loading'
+    });
+    appendContent(main, loading);
+    await waitFor(1000);
+    loading.innerText = 'Loading...';
+    await waitFor(2000);
+    loading.innerText = 'Loading....';
+    await waitFor(3000);
+    loading.innerText = 'Loading.....';
+    //
     const randomCat = await getApi();
-
+    main.removeChild(loading);
     const createCatImage = await createElement('img', {
       className: 'catImage',
       src: randomCat
     });
     appendContent(catSection, createCatImage);
   }
-  createImage();
-
-  setInterval(async function() {
-    const randomCatChange = await getApi();
-    const test = document.querySelector('.catImage');
-    test.src = await randomCatChange;
-  }, 3000);
+  createImage().then(() => {
+    setInterval(async function() {
+      const randomCatChange = await getApi();
+      const test = document.querySelector('.catImage');
+      test.src = await randomCatChange;
+    }, 3000);
+  });
 
   return [header, main, footer];
 }
